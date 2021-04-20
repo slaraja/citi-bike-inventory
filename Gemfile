@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'sinatra'
-gem 'activerecord', '~> 6.1', '>= 6.1.3.1'
-gem 'sinatra-activerecord', '~> 2.0', '>= 2.0.22', :require => 'sinatra/activerecord'
+gem 'activerecord', "~> 5.2.4"
+gem 'sinatra-activerecord'
 gem 'rake'
 gem 'require_all'
 gem 'sqlite3', '~> 1.4', '>= 1.4.2'

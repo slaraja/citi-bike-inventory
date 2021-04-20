@@ -1,4 +1,4 @@
-class CreateItems < ActiveRecord::Migration[6.1]
+class CreateItems < ActiveRecord::Migration[5.2]
   #change instance method
   #can be applied and undone - replaces up/down methods
   def change
