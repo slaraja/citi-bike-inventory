@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_20_121236) do
+ActiveRecord::Schema.define(version: 2021_04_21_122921) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(version: 2021_04_20_121236) do
     t.integer "year"
     t.text "condition"
     t.boolean "status"
+  end
+
+  create_table "units", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
   end
 
 end
