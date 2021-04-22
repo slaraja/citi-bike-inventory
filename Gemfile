@@ -9,7 +9,7 @@ gem 'sqlite3', '~> 1.4', '>= 1.4.2'
 gem 'thin', '~> 1.8'
 gem 'shotgun'
 gem 'pry'
-gem 'bcrypt'
+gem 'bcrypt' #provides a hashing algorithm that transforms passwords
 gem 'tux'
 
 group :test do

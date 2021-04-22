@@ -9,8 +9,9 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :welcome
+    "Hello"
   end
+
 
   #Variable is reset every time we make a request because it's a new instance.
 
