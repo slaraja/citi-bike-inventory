@@ -12,6 +12,9 @@ class ApplicationController < Sinatra::Base
     "Hello"
   end
 
+  get '/signup' do
+    erb :"users/new"
+end
 
   #Variable is reset every time we make a request because it's a new instance.
 
