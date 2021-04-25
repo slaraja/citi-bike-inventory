@@ -7,8 +7,7 @@ end
 post "/signup" do
     #handles signing up the user
     #binding.pry
-    #instantiate user
-    u = User.new(params)
+    u = User.new(params) #instantiate user
     #params is key value pairs. 
     #instead of params could also write: User.new(email: params["email"], password: params["password"])
     #make sure user signed up with valid data
@@ -17,6 +16,7 @@ post "/signup" do
     redirect to '/signup'
     else #a valid attempt
         u.save
+        #this is the code that actually logs you in:
         session[:user_id] = u.id #IMPORTANT: assign id and add key value pairs to the session hash
         redirect '/items'
     end 

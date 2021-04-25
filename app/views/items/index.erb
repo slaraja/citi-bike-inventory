@@ -1,10 +1,12 @@
 <h2>Inventory List</h2>
-<% if logged_in? %>
-  <h3>Logged in user:  <%= current_user.email %></h3>
-<% end %>
+
 <% @items.each do |u|  %> 
 
-  <%= u.id %> -  <a href="/items/<%=u.id%>"><%=u.title %></a> <br>
+  <%= u.id %> -  <a href="/items/<%=u.id%>"><%=u.name %></a> <br>
+<% end %>
+
+<% if logged_in? %>
+  <h3>You are logged in with the following email:  <%= current_user.email %></h3>
 <% end %>
 
 
