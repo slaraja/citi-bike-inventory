@@ -9,7 +9,13 @@ class ItemController < ApplicationController
 
     #displays create new item form
     get '/items/new' do
-        
+        if !logged_in?
+            #leave the method - copy and paste where users cannot be logged in
+            redirect '/login' 
+        item = Item.new(params)
+        item.save
+        redirect '/items'
+        end
     end
 
     #creates one item
