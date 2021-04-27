@@ -1,9 +1,8 @@
-class SessionController < ApplicationController
+class SessionsController < ApplicationController
 
     #show the form
     get '/login' do
         erb :"users/login" 
-        #erb is the comman we use to show the form
     end
 
     #process the form
@@ -13,6 +12,7 @@ class SessionController < ApplicationController
         #confirm if password is correct
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
+            #set a key in the session hash equal to this user id
             redirect '/items'
         else
             redirect '/login'

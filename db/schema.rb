@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_21_131608) do
+ActiveRecord::Schema.define(version: 2021_04_27_223834) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_04_21_131608) do
     t.integer "year"
     t.text "condition"
     t.boolean "status"
+    t.integer "user_id"
   end
 
   create_table "units", force: :cascade do |t|
