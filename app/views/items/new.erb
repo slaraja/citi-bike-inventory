@@ -1,0 +1,27 @@
+<h2>Enter details below to add an item to inventory.</h2>
+<form method="POST" action="/items">
+    
+    Name: <input type="text" name="name">
+    <br>
+    <br>
+    Size: <input type="integer" name="size">
+    <br>
+    <br>
+    Year: <input type="text" name="year">
+    <br>
+    <br>
+    Condition: <input type="text" name="condition">
+    <br>
+    <br>
+    Status: <input type="boolean" name="status">
+    <br>
+    <br>
+    <input type="submit" value="Add item"> 
+    <br>
+    <br>
+</form>
+
+<% if logged_in? %>
+  <i>You are logged in with the following email:  <%= current_user.email %><i>
+<% end %>
+

@@ -1,0 +1,12 @@
+<h2>Show page </h2>
+<h3>Name: <%= @item.name %> </h3>
+
+<% if @item.user == current_user %>
+
+   <a href="/items/<%= @item.id %>/edit">Edit</a>
+
+   <form method="POST" action="/items/<%= @item.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="DELETE ITEM">
+   </form>
+<% end %>

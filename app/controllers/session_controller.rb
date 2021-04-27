@@ -13,7 +13,7 @@ class SessionController < ApplicationController
         #confirm if password is correct
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            reidrect '/items'
+            redirect '/items'
         else
             redirect '/login'
         end 

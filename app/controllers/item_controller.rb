@@ -13,8 +13,20 @@ class ItemController < ApplicationController
             #leave the method - copy and paste where users cannot be logged in
             redirect '/login' 
         end
-        erb: "items/new"
+        erb :"items/new"
     end
+
+    #displays one item based on the id in the url
+    get 'items/:id' do
+        # if !logged_in?
+        #     #leave the method - copy and paste where users cannot be logged in
+        #     redirect '/login' 
+        # end
+        # @item = Item.find_by_id(params["id")
+        # erb :"items/show"
+    end
+
+
 
     #creates one item
     post '/items' do
@@ -23,11 +35,6 @@ class ItemController < ApplicationController
         item.user_id= session[:user_id]
         item.save
         redirect '/items'
-    end
-
-    #displays one item based on the id in the url
-    get 'items/:id' do
-        
     end
 
     #displays edit form based on ID in the url
