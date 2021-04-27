@@ -40,10 +40,6 @@ class ItemController < ApplicationController
 
     #displays edit form based on ID in the url
     get 'items/:id/edit' do
-        if !logged_in?
-            #leave the method if not logged in
-            redirect '/login' 
-        end
         @item = Item.find(params["id"])
         erb :"items/edit"
     end
