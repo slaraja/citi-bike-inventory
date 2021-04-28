@@ -16,7 +16,7 @@ class ItemController < ApplicationController
         erb :"items/new"
     end
 
-         #displays one item based on the id in the url
+    #displays one item based on the id in the url
      get '/items/:id' do
         @item = Item.find(params["id"])
         erb :"items/show"
@@ -39,20 +39,31 @@ class ItemController < ApplicationController
 
 
     #displays edit form based on ID in the url
-    get 'items/:id/edit' do
+    get '/items/:id/edit' do
         @item = Item.find(params["id"])
         erb :"items/edit"
     end
 
-
-    #modifies an existing item based on ID in the url
     patch 'items/:id' do
-        
+        @item = Item.find(params["id"])
+        if !logged_in?
+            #leave the method if not logged in
+            redirect '/login' 
+        end
+        @item.update(params)["item"]
+        item.save
+        redirect "/items/#{@item.id}"
     end
 
     #deletes one item based on ID in the url
     delete 'items/:id' do
-        
+        @item = Item.find(params["id"])
+        if !logged_in?
+            #leave the method if not logged in
+            redirect '/login' 
+        end
+        @item.destroy
+        redirect '/items'
     end
 
 end
