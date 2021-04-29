@@ -53,12 +53,8 @@ class ItemController < ApplicationController
     end
 
     #deletes one item based on ID in the url
-    delete 'items/:id' do
+    delete '/items/:id' do
         @item = Item.find(params["id"])
-        if !logged_in?
-            #leave the method if not logged in
-            redirect '/login' 
-        end
         @item.destroy
         redirect '/items'
     end
