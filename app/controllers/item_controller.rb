@@ -33,6 +33,7 @@ class ItemController < ApplicationController
         #item = current_user.items.build(params)
         #build acts similar to new, but builds association
         item.user_id= session[:user_id]
+        #need to save to add to database
         item.save
         redirect '/items'
     end
@@ -40,18 +41,14 @@ class ItemController < ApplicationController
 
     #displays edit form based on ID in the url
     get '/items/:id/edit' do
+        #the user told us which obj they are looking for, so we have to find it
         @item = Item.find(params["id"])
         erb :"items/edit"
     end
 
-    patch 'items/:id' do
+    patch '/items/:id' do
         @item = Item.find(params["id"])
-        if !logged_in?
-            #leave the method if not logged in
-            redirect '/login' 
-        end
-        @item.update(params)["item"]
-        item.save
+        @item.update(params["item"])
         redirect "/items/#{@item.id}"
     end
 
