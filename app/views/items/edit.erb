@@ -19,6 +19,8 @@
     <br>
     <br>
     <input type="submit" value="Update Item">
+    <br>
+    <br>
 </form>
 <% if logged_in? %>
   <i>You are logged in with the following email:  <%= current_user.email %><i>
@@ -26,7 +28,8 @@
 
     <div>
         <br>
-        <a href="/items/new">Add a new item</a> |       
+        <a href="/items">See all items</a> |
+        <a href="/items/new">Add a new item</a> |    
         <a href="/logout">Logout</a>
     </div>
 

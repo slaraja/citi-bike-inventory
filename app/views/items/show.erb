@@ -11,6 +11,7 @@ Click "Edit" to edit the item details. Click "Delete Item" to delete it from inv
 
 <% if @item.user == current_user %>
 
+    <a href="/items">See all items</a> |
    <a href="/items/<%= @item.id %>/edit">Edit</a>
 <br>
 <br>
@@ -23,8 +24,4 @@ Click "Edit" to edit the item details. Click "Delete Item" to delete it from inv
 <br>
 <% if logged_in? %>
   <i>You are logged in with the following email:  <%= current_user.email %><i>
-<% end %>
-
-<% if !logged_in? %>
-  <i>You do not have the appropriate access to edit this item. <i>
 <% end %>
