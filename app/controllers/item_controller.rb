@@ -43,7 +43,12 @@ class ItemController < ApplicationController
     get '/items/:id/edit' do
         #the user told us which obj they are looking for, so we have to find it
         @item = Item.find(params["id"])
-        erb :"items/edit"
+        if current_user.id == @item.user_id  
+            # then user can see this form
+            erb :"items/edit"
+        else
+            redirect '/items'
+        end
     end
 
     patch '/items/:id' do
