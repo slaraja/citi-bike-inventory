@@ -9,10 +9,10 @@ class ItemController < ApplicationController
 
     #displays create new item form
     get '/items/new' do
-        if !logged_in?
-            #leave the method if not logged in
-            redirect '/login' 
-        end
+        # if !logged_in?
+        #     #leave the method if not logged in
+        #     redirect '/login' 
+        # end
         erb :"items/new"
     end
 

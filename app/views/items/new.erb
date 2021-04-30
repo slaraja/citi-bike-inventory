@@ -21,7 +21,15 @@
     <br>
 </form>
 
+    <div>
+        <a href="/items">See all items</a> |
+        <a href="/logout">Logout</a>
+    </div>
+
 <% if logged_in? %>
+  <br>
   <i>You are logged in with the following email:  <%= current_user.email %><i>
 <% end %>
+
+
 
