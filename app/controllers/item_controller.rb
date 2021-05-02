@@ -11,13 +11,10 @@ class ItemController < ApplicationController
         erb :"items/new"
     end
 
-    #displays one item based on the id in the url
      get '/items/:id' do
         redirect_to_signup_if_not_logged_in
         @item = Item.find(params["id"])
-        # erb :"items/show"
         if current_user.id == @item.user_id  
-            # then user can see the info
             erb :"items/show"
         else
             redirect '/items'
@@ -29,7 +26,6 @@ class ItemController < ApplicationController
         item = Item.new(params)
         #assigns the item to the user
         item.user_id= session[:user_id]
-        #need to save to add to database
         item.save
         redirect '/items'
     end
@@ -37,6 +33,7 @@ class ItemController < ApplicationController
 
     #displays edit form based on ID in the url
     get '/items/:id/edit' do
+        redirect_to_signup_if_not_logged_in
         #the user told us which obj they are looking for, so we have to find it
         @item = Item.find(params["id"])
         if current_user.id == @item.user_id  

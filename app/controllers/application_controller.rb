@@ -9,13 +9,7 @@ class ApplicationController < Sinatra::Base
     set :session_secret, 'notreallyasecret'
   end
 
-  get "/" do
-    "Hello"
-  end
-
-  #use this instead of folder because you don't have access to the session in folder
-  #easier to call
-  helpers do #allows views to access these methods
+  helpers do 
 
     def logged_in?
       # session.has_key?('user_id')
