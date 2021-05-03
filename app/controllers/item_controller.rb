@@ -1,11 +1,11 @@
 class ItemController < ApplicationController
     
     get '/items' do
+        redirect_to_signup_if_not_logged_in
         @items = Item.all
         erb :"items/index" 
     end
 
-    #displays create new item form
     get '/items/new' do
         redirect_to_signup_if_not_logged_in            
         erb :"items/new"
@@ -21,7 +21,6 @@ class ItemController < ApplicationController
         end
     end
 
-    #creates one item
     post '/items' do
         item = Item.new(params)
         #assigns the item to the user
@@ -31,7 +30,6 @@ class ItemController < ApplicationController
     end
 
 
-    #displays edit form based on ID in the url
     get '/items/:id/edit' do
         redirect_to_signup_if_not_logged_in
         #the user told us which obj they are looking for, so we have to find it
@@ -50,7 +48,6 @@ class ItemController < ApplicationController
         redirect "/items/#{@item.id}"
     end
 
-    #deletes one item based on ID in the url
     delete '/items/:id' do
         @item = Item.find(params["id"])
         @item.destroy

@@ -24,7 +24,6 @@ class ApplicationController < Sinatra::Base
     end
   end
 
-    private
     def redirect_to_signup_if_not_logged_in
       if !logged_in?
         redirect '/signup' 
