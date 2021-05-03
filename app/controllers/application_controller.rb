@@ -7,14 +7,22 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, 'notreallyasecret'
+    set :show_exceptions, false
+  end
+
+  not_found do 
+    status 404 
+    redirect to '/signup'
+  end
+
+  error ActiveRecord::RecordNotFound do
+    redirect to '/signup'
   end
 
   helpers do 
 
     def logged_in?
-      # session.has_key?('user_id')
-      !!current_user #ret true or false if user is logged in
-      #boolean value !! allows for it to ret true/false
+      !!current_user
     end
     
     def current_user   #memoization
