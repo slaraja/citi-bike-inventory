@@ -5,7 +5,7 @@
 An inventory tracker for Citi Bike marketing materials.
 
 
- <img width="639" alt="Screen Shot 2021-06-18 at 1 18 49 PM" src="https://user-images.githubusercontent.com/77073805/122596722-489e1e00-d038-11eb-9f7e-987c8ee08b1b.png">
+<img width="574" alt="Screen Shot 2021-06-18 at 1 55 56 PM" src="https://user-images.githubusercontent.com/77073805/122599891-09260080-d03d-11eb-94a1-afdb21eb9465.png">
 
 ## Application Instructions
 - User can view the list of items in inventory.
