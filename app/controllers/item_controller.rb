@@ -32,10 +32,8 @@ class ItemController < ApplicationController
 
     get '/items/:id/edit' do
         redirect_to_signup_if_not_logged_in
-        #the user told us which obj they are looking for, so we have to find it
         @item = Item.find(params["id"])
         if current_user.id == @item.user_id  
-            # then user can see this form
             erb :"items/edit"
         else
             redirect '/items'

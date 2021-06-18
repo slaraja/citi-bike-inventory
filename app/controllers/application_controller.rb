@@ -25,10 +25,8 @@ class ApplicationController < Sinatra::Base
       !!current_user
     end
     
-    def current_user   #memoization
-      #why not just user = there might be a user who isn't a a current user
+    def current_user  
       @current_user ||= User.find(session[:user_id]) if session[:user_id] 
-      #if someone hasn't logged in, it doesn't try to look it up (if session[user_id])
     end
   end
 
