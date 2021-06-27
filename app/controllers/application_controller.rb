@@ -23,6 +23,7 @@ class ApplicationController < Sinatra::Base
 
     def logged_in?
       !!current_user
+      #!! converts to boolean
     end
     
     def current_user  

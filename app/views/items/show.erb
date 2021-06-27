@@ -2,6 +2,26 @@
 Click "Edit" to edit the item details. Click "Delete Item" to delete it from inventory.
 <br>
 <br>
-<h3>Title: <%= @job.title %> </h3>
-<h3>Level: <%= @job.level %> </h3>
-<h3>Link: <%= @job.link %> </h3>
+<h3>Name: <%= @item.name %> </h3>
+<h3>Size: <%= @item.size %> </h3>
+<h3>Year: <%= @item.year %> </h3>
+<h3>Condition: <%= @item.condition %> </h3>
+<h3>Status: <%= @item.status %> </h3>
+
+
+<% if @item.user == current_user %>
+
+    <a href="/items">See all items</a> |
+   <a href="/items/<%= @item.id %>/edit">Edit this item</a>
+<br>
+<br>
+
+   <form method="POST" action="/items/<%= @item.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete Item">
+   </form>
+<% end %>
+<br>
+<% if logged_in? %>
+  <i>You are logged in with the following email:  <%= current_user.email %><i>
+<% end %>
