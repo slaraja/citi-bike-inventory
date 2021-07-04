@@ -13,9 +13,6 @@ An inventory tracker for Citi Bike marketing materials.
 - User can edit their items.
 - User can delete their items.
 
-
-The user can view the list of items in inventory, add an item, edit their items, and delete their items.
-
 ## Video Demo
 
 https://drive.google.com/drive/folders/1_v9zuCJ8wm3Kh6hw5kshqZVwPhSaEYSg?usp=sharing
